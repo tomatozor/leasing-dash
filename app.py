@@ -45,6 +45,7 @@ years = sorted(resume["Period"].unique())
 selected_year = st.sidebar.selectbox("📅 Période à afficher", years, index=len(years)-1)
 
 # 📊 Calculs KPI
+mensuel = mensuel.dropna(subset=["Lease_Revenue"])  # ou "Mois" si toujours rempli
 last = mensuel.iloc[-1]
 ca_mois   = float(last["Lease_Revenue"])
 res_mois  = float(last["Net_Cashflow"])
