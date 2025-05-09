@@ -1,0 +1,6 @@
+streamlit
+gspread
+gspread_pandas
+pandas
+plotly
+streamlit-autorefresh
