@@ -49,19 +49,19 @@ with col1:
 filtered_df = df[df["Année"] == year_selected]
 
 # -----------------------------------------------------
-# INDICATEURS CLÉS
+# INDICATEURS CLÉS EN MF
 # -----------------------------------------------------
 kpi1, kpi2, kpi3 = st.columns(3)
 
 with kpi1:
-    st.metric("💸 Chiffre d'affaires (mois)", f"{filtered_df['Lease_Revenue'].iloc[-1]:,.0f} k€")
+    st.metric("💸 Chiffre d'affaires (mois)", f"{filtered_df['Lease_Revenue'].iloc[-1]:,.0f} MF")
 
 with kpi2:
-    st.metric("📈 Résultat cumulé", f"{filtered_df['Cum_Cashflow'].iloc[-1]:,.0f} k€")
+    st.metric("📈 Résultat cumulé", f"{filtered_df['Cum_Cashflow'].iloc[-1]:,.0f} MF")
 
 with kpi3:
     spread = filtered_df["Encours_Leasing"].iloc[-1] - filtered_df["Encours_Debt"].iloc[-1]
-    st.metric("🔍 Écart Leasing / Dette", f"{spread:,.0f} k€")
+    st.metric("🔍 Écart Leasing / Dette", f"{spread:,.0f} MF")
 
 # -----------------------------------------------------
 # GRAPHIQUES
